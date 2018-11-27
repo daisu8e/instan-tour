@@ -1,0 +1,316 @@
+----------------------------------------------------------------
+InstanTour
+----------------------------------------------------------------
+
+Welcome to InstanTour!
+
+We have 5+ sights and 5+ restaurants for your tour.
+
+We will instantly arrange some tours for you.
+
+How long would you like to tour?
+
+> You : 1 day
+
+OK. Now, we are arranging ...
+
+(1) ------------------------------------------------------------
+
+Granville Island > Yaletown
+
+* * * * *  183 tourist reviews
+
+(2) ------------------------------------------------------------
+
+Granville Island > Yaletown
+
+* * *      73 tourist reviews
+
+(3) ------------------------------------------------------------
+
+Granville Island > Yaletown
+
+*          8 tourist reviews
+
+(0) ------------------------------------------------------------
+
+Back
+
+----------------------------------------------------------------
+
+Select a number that you are interested in.
+
+> You : 1
+
+Schedule for Granville Island > Yaletown
+
+  + 10:00 @ Current location
+  |
+  |
+  |
+  + 10:30 @ Granville Island
+  |
+  |
+  |
+  + 12:45 @ The Sandbar Seafood Restaurant
+  |
+  |
+  |
+  + 14:00 @ Yaletown
+  |
+  |
+  |
+  + 18:00 @ Current location
+
+(1) Start this tour!
+(2) Check reviews
+(0) Back
+
+Select a number that you want to do.
+
+> You : 1
+
+OK! Here we go!
+
+ -> + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+    + 10:00 @ Current location
+    |
+ -> |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+ -> + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+OK. We will guide you around Granville Island.
+Granville Island is ...
+...
+...
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+ -> + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+ -> |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+ -> + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+OK. We will guide you around The Sandbar Seafood Restaurant.
+The Sandbar Seafood Restaurant is ...
+...
+...
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+ -> + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+ -> |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+ -> + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+OK. We will guide you around Yaletown.
+Yaletown is ...
+...
+...
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+ -> + 14:00 @ Yaletown
+    |
+    |
+    |
+    + 18:00 @ Current location
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+ -> |
+    |
+    + 18:00 @ Current location
+
+    + 10:00 @ Current location
+    |
+    |
+    |
+    + 10:30 @ Granville Island
+    |
+    |
+    |
+    + 12:45 @ The Sandbar Seafood Restaurant
+    |
+    |
+    |
+    + 14:00 @ Yaletown
+    |
+    |
+    |
+ -> + 18:00 @ Current location
+
+Hi! How was your tour?
+Please enter your review.
+
+> You : ...
+
+And please enter your stars (* - *****).
+
+> You : *****
+
+Thank you for using InstanTour and we hope you will use it again.
+
