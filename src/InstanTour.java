@@ -18,7 +18,7 @@ public class InstanTour {
     tourGuide.showTours();
     input = tourist.selectTour();
 
-    tourGuide.showTours();
+    tourGuide.showTour();
     input = tourist.selectOption();
 
     tourGuide.start();
