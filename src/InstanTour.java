@@ -1,12 +1,9 @@
 import instant_tour.TourGuide;
 import instant_tour.Tourist;
 
-import java.util.Scanner;
-
 public class InstanTour {
   public static void main(String[] args) {
 
-    Scanner scanner = new Scanner(System.in);
     String input;
 
     TourGuide tourGuide = new TourGuide();
