@@ -4,57 +4,77 @@ import instant_tour.Tourist;
 public class InstanTour {
   public static void main(String[] args) {
 
-    String input;
-
     TourGuide tourGuide = new TourGuide();
     Tourist tourist = new Tourist();
 
-    tourGuide.welcome();
-    input = tourist.inputTime();
+    int option;
 
-    tourGuide.showTours();
-    input = tourist.selectTour();
+    while (true) {
 
-    tourGuide.showTour();
-    input = tourist.selectOption();
+      if (!tourist.hasTime()) {
+        tourGuide.welcome();
+        tourGuide.askTime();
+        tourist.inputTime();
+        tourGuide.arrangeTours(tourist);
+      }
 
-    tourGuide.start();
+      if (!tourist.hasTour()) {
+        tourGuide.askTour();
+        option = tourist.inputOption();
+        if (option == 0) {
+          tourist.clearTime();
+          continue;
+        } else {
+          tourist.setTour(tourGuide.getTours().get(option - 1));
+        }
+      }
 
-    tourist.showLocation(0);
-    tourist.showLocation(1);
-    tourist.showLocation(2);
-    tourist.showLocation(3);
-    tourist.showLocation(4);
+      tourist.checkTour();
+      tourGuide.askStart();
+      option = tourist.inputOption();
+      if (option == 0) {
+        tourist.clearTour();
+        continue;
+      }
 
-    tourGuide.guide(0);
+      tourGuide.start();
 
-    tourist.showLocation(5);
-    tourist.showLocation(6);
-    tourist.showLocation(7);
-    tourist.showLocation(8);
+      tourist.checkLocation(0);
+      tourist.checkLocation(1);
+      tourist.checkLocation(2);
+      tourist.checkLocation(3);
+      tourist.checkLocation(4);
 
-    tourGuide.guide(1);
+      tourGuide.guide(0);
 
-    tourist.showLocation(9);
-    tourist.showLocation(10);
-    tourist.showLocation(11);
-    tourist.showLocation(12);
+      tourist.checkLocation(5);
+      tourist.checkLocation(6);
+      tourist.checkLocation(7);
+      tourist.checkLocation(8);
 
-    tourGuide.guide(2);
+      tourGuide.guide(1);
 
-    tourist.showLocation(13);
-    tourist.showLocation(14);
-    tourist.showLocation(15);
-    tourist.showLocation(16);
+      tourist.checkLocation(9);
+      tourist.checkLocation(10);
+      tourist.checkLocation(11);
+      tourist.checkLocation(12);
 
-    tourGuide.finish();
+      tourGuide.guide(2);
 
-    tourGuide.askReview();
-    input = tourist.review();
+      tourist.checkLocation(13);
+      tourist.checkLocation(14);
+      tourist.checkLocation(15);
+      tourist.checkLocation(16);
 
-    tourGuide.askRating();
-    input = tourist.rate();
+      tourGuide.finish();
 
-    tourGuide.thankYou();
+      tourGuide.askReview();
+      tourist.review();
+
+      tourGuide.askRating();
+      tourist.rate();
+
+      tourGuide.thankYou();
+    }
   }
 }

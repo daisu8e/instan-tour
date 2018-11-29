@@ -6,22 +6,62 @@ public class Tourist {
 
   private static final Scanner SCANNER = new Scanner(System.in);
 
-  public String inputTime() {
-    System.out.print("> You : ");
-    return SCANNER.nextLine();
+  private Gps gps;
+  private Home home;
+  private Time time;
+  private Tour tour;
+
+  public Tourist() {
+    this.gps = new Gps();
+    this.home = new Home(this.gps.getLocationName());
   }
 
-  public String selectTour() {
+  public void inputTime() {
     System.out.print("> You : ");
-    return SCANNER.nextLine();
+    this.time = new Time(SCANNER.nextLine());
   }
 
-  public String selectOption() {
-    System.out.print("> You : ");
-    return SCANNER.nextLine();
+  public Time getTime() {
+    return this.time;
   }
 
-  public void showLocation(int step) {
+  public boolean hasTime() {
+    return this.time != null;
+  }
+
+  public void clearTime() {
+    this.time = null;
+  }
+
+  public int inputOption() {
+    System.out.print("> You : ");
+    return Integer.parseInt(SCANNER.nextLine());
+  }
+
+  public Tour getTour() {
+    return this.tour;
+  }
+
+  public void setTour(Tour tour) {
+    this.tour = tour;
+  }
+
+  public boolean hasTour() {
+    return this.tour != null;
+  }
+
+  public void clearTour() {
+    this.tour = null;
+  }
+
+  public void checkTour() {
+    for (int i = 0; i < 100; i++) System.out.println("");
+    System.out.println("Schedule for " + this.tour);
+    System.out.println("");
+    this.tour.showSchedule();
+  }
+
+  public void checkLocation(int step) {
 
     if (step == 0) {
       for (int i = 0; i < 100; i++) System.out.println("");
