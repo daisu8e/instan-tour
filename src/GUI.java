@@ -55,25 +55,21 @@ public class GUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Instan Tour");
-		lblNewLabel.setFont(new Font("DecoType Naskh", Font.PLAIN, 28));
-		lblNewLabel.setBounds(242, 6, 296, 31);
-		frame.getContentPane().add(lblNewLabel);
-		
 		JLabel label = new JLabel("---------------------------------------------------------------------------------");
-		label.setBounds(18, 33, 648, 16);
+		label.setBounds(18, 56, 648, 16);
 		frame.getContentPane().add(label);
 		
 		JLabel lblWelcomeToInstantour = new JLabel("Welcome to InstanTour !");
-		lblWelcomeToInstantour.setBounds(242, 49, 167, 31);
+		lblWelcomeToInstantour.setFont(new Font("Hiragino Kaku Gothic Std", Font.PLAIN, 18));
+		lblWelcomeToInstantour.setBounds(72, 84, 289, 31);
 		frame.getContentPane().add(lblWelcomeToInstantour);
 		
 		JLabel lblWeHave = new JLabel("We have 5+ sights and 5+ restaurants for your tour.");
-		lblWeHave.setBounds(166, 79, 341, 16);
+		lblWeHave.setBounds(45, 130, 341, 16);
 		frame.getContentPane().add(lblWeHave);
 		
 		JLabel lblWeWillInstantly = new JLabel("We will instantly arrange some tours for you.");
-		lblWeWillInstantly.setBounds(176, 107, 296, 16);
+		lblWeWillInstantly.setBounds(45, 169, 296, 16);
 		frame.getContentPane().add(lblWeWillInstantly);
 		
 		JLabel lblHowLongWould = new JLabel("How long would you like to tour?");
@@ -109,10 +105,16 @@ public class GUI {
 		frame.getContentPane().add(btnDay_1);
 		
 		JLabel lblI = new JLabel("");
-		Image img=new ImageIcon(this.getClass().getResource("/world-tour-3-622617.png")).getImage();
+		Image img=new ImageIcon(this.getClass().getResource("/Main_logo.png")).getImage();
 		lblI.setIcon(new ImageIcon(img));
-		lblI.setBounds(422, 116, 256, 256);
+		lblI.setBounds(398, 74, 256, 256);
 		frame.getContentPane().add(lblI);
+		
+		JLabel label_1 = new JLabel("");
+		Image img2=new ImageIcon(this.getClass().getResource("/Aria.png")).getImage();
+		label_1.setIcon(new ImageIcon(img2));
+		label_1.setBounds(224, 6, 223, 56);
+		frame.getContentPane().add(label_1);
 		
 
 		

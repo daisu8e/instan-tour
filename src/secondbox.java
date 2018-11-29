@@ -74,23 +74,15 @@ public class secondbox extends JFrame {
 		lblTouristReviews.setBounds(307, 70, 125, 28);
 		contentPane.add(lblTouristReviews);
 		
-		JCheckBox chckbxFirst = new JCheckBox("First");
-		chckbxFirst.setBounds(589, 59, 74, 49);
-		contentPane.add(chckbxFirst);
-		
 		JLabel label_1 = new JLabel("Please select …");
 		label_1.setForeground(Color.BLUE);
-		label_1.setBounds(241, 10, 233, 16);
+		label_1.setBounds(559, 29, 106, 16);
 		contentPane.add(label_1);
 		
 		JLabel label_2 = new JLabel("(2) ------------------------------------------------------------");
 		label_2.setForeground(Color.RED);
 		label_2.setBounds(29, 135, 599, 23);
 		contentPane.add(label_2);
-		
-		JCheckBox chckbxSecond = new JCheckBox("Second");
-		chckbxSecond.setBounds(586, 156, 77, 49);
-		contentPane.add(chckbxSecond);
 		
 		JLabel lblTouristReviews_1 = new JLabel("73 tourist reviews.  ");
 		lblTouristReviews_1.setBounds(329, 167, 125, 28);
@@ -120,18 +112,10 @@ public class secondbox extends JFrame {
 		lblTouristReviews_2.setBounds(332, 267, 125, 28);
 		contentPane.add(lblTouristReviews_2);
 		
-		JCheckBox chckbxThird = new JCheckBox("Third");
-		chckbxThird.setBounds(589, 256, 74, 49);
-		contentPane.add(chckbxThird);
-		
 		JLabel label_8 = new JLabel("— ------------------------------------------------------------");
 		label_8.setForeground(Color.RED);
 		label_8.setBounds(32, 295, 599, 23);
 		contentPane.add(label_8);
-		
-		JButton btnNext = new JButton("Next");
-		btnNext.setBounds(556, 346, 75, 23);
-		contentPane.add(btnNext);
 		
 		JLabel star = new JLabel("");
 		Image img=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
@@ -180,5 +164,17 @@ public class secondbox extends JFrame {
 		Star8.setIcon(new ImageIcon(img));
 		Star8.setBounds(464, 270, 20, 20);
 		contentPane.add(Star8);
+		
+		JButton btnFirst = new JButton("First");
+		btnFirst.setBounds(576, 71, 75, 23);
+		contentPane.add(btnFirst);
+		
+		JButton btnSecond = new JButton("Second");
+		btnSecond.setBounds(576, 170, 75, 23);
+		contentPane.add(btnSecond);
+		
+		JButton btnThird = new JButton("Third");
+		btnThird.setBounds(576, 270, 75, 23);
+		contentPane.add(btnThird);
 	}
 }
