@@ -77,10 +77,9 @@ public class TourGuide {
 
   public void guide(Location location) {
     for (int i = 0; i < 100; i++) System.out.println("");
-    System.out.println("OK. We will guide you around Granville Island.");
-    System.out.println("Granville Island is ...");
-    System.out.println("...");
-    System.out.println("...");
+    System.out.println("OK. We will guide you around " + location + ".");
+    System.out.println("");
+    System.out.println(location.getInformation());
     SCANNER.nextLine();
   }
 
