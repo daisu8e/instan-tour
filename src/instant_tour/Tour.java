@@ -51,8 +51,9 @@ public class Tour {
     this.schedule.show(point);
   }
 
-  public void setHome(Home home) {
-    this.schedule.addHome(home);
+  public void arrange(Tourist tourist) {
+    this.schedule.setStartTime();
+    this.schedule.addHome(tourist.getHome());
   }
 
   public List<Location> getRoute() {

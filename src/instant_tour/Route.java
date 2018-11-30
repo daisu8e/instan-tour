@@ -33,6 +33,10 @@ public class Route {
     return this.end;
   }
 
+  public Time getMoveTime() {
+    return this.time;
+  }
+
   public static Map<Integer, Route> find() {
     Map<Integer, Route> map = new HashMap<>();
     Map<Integer, Location> locations = Location.find();

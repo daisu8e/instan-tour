@@ -24,7 +24,7 @@ public class Tourist {
 
   public void inputTime() {
     System.out.print("> You : ");
-    this.time = new Time(SCANNER.nextLine());
+    this.time = new Time(SCANNER.nextLine() + " days");
   }
 
   public Time getTime() {

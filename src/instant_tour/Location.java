@@ -14,6 +14,7 @@ public abstract class Location {
 
   public Location(String name) {
     this.name = name;
+    this.time = new Time("0");
   }
 
   public Location(int id, String name, Time time, String information) {
@@ -31,7 +32,7 @@ public abstract class Location {
     return this.name;
   }
 
-  public Time getTime() {
+  public Time getStayTime() {
     return this.time;
   }
 

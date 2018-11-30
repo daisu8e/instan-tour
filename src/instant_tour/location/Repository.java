@@ -3,23 +3,23 @@ package instant_tour.location;
 public class Repository {
 
   public static String[][] data = {
-    {"1", "Sight", "Stanley Park", "4",
+    {"1", "Sight", "Stanley Park", "2",
 			"Stanley Park is a 405-hectare public park that borders the downtown of Vancouver in British Columbia, \n\n" +
       "Canada and is almost entirely surrounded by waters of Vancouver Harbour and English Bay. The park has a \n\n" +
       "long history and was one of the first areas to be explored in the city."
     },
-    {"2", "Sight", "Capilano Suspension Bridge", "3",
+    {"2", "Sight", "Capilano Suspension Bridge", "1",
       "The Capilano Suspension Bridge is a simple suspension bridge crossing the Capilano River in the District \n\n" +
       "of North Vancouver, British Columbia, Canada. The current bridge is 140 metres long and 70 metres above \n\n" +
       "the river. It is part of a private facility with an admission fee, and draws over 800,000 visitors a year."
     },
-    {"3", "Sight", "Whistler", "6",
+    {"3", "Sight", "Whistler", "3",
       "Whistler is a town north of Vancouver, British Columbia, that's home to Whistler Blackcomb, one of the \n\n" +
       "largest ski resorts in North America. Besides skiing and snowboarding, the area offers snowshoeing, \n\n" +
       "tobogganing and ski jumping at the Olympic Park, a venue for the 2010 Vancouver Winter Olympics. The hub \n\n" +
       "of Whistler is a compact, chalet-style pedestrian village at the base of Whistler and Blackcomb mountains."
     },
-    {"4", "Sight", "Gastown", "4",
+    {"4", "Sight", "Gastown", "3",
       "Lively Gastown is known for its whistling Steam Clock and mix of souvenir shops, indie art galleries and \n\n" +
       "decor stores in Victorian buildings. A trendy food and drink scene includes chic cocktail lounges and \n\n" +
       "restaurants serving everything from gourmet sandwiches to local seafood. Hip eateries also dot the \n\n" +

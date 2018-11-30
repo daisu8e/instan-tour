@@ -22,6 +22,6 @@ public class Time {
     matcher = DAY_PATTERN.matcher(string.toLowerCase());
     if (matcher.find()) return Integer.parseInt(matcher.group(1)) * 8;
 
-    return Integer.parseInt(string) * 8;
+    return Integer.parseInt(string);
   }
 }

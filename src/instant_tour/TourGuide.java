@@ -28,7 +28,7 @@ public class TourGuide {
 
   public void arrangeTours(Tourist tourist) {
     Map<Integer, Tour> tours = Tour.find();
-    tours.entrySet().stream().forEach(it -> it.getValue().setHome(tourist.getHome()));
+    tours.entrySet().stream().forEach(it -> it.getValue().arrange(tourist));
     this.tours = new ArrayList<>();
     this.tours.add(tours.get(1));
     this.tours.add(tours.get(2));

@@ -2,6 +2,8 @@ package instant_tour;
 
 import instant_tour.schedule.Repository;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +14,7 @@ public class Schedule {
   private int id;
   private List<Route> routes;
   private List<Location> route;
+  private LocalDateTime startTime;
 
   public Schedule(int id, List<Route> routes) {
     this.id = id;
@@ -41,22 +44,64 @@ public class Schedule {
   }
 
   public void show() {
-    for (int i = 0; i < this.route.size(); i++) {
-      String line = "";
-      Location location = this.route.get(i);
-      if (location != null) line += "  + 10:00 @ " + location;
-      else                  line += "  |";
-      System.out.println(line);
+    Route route;
+    LocalDateTime dateTime = this.startTime;
+    String time;
+    Location start;
+    Location end;
+    for (int i = 0; i < this.routes.size(); i++) {
+      route = this.routes.get(i);
+
+      if (i == 0) {
+        start = route.getStart();
+        time = DateTimeFormatter.ofPattern("H:mm").format(dateTime);
+        System.out.println("  + " + time + " @ " + start);
+      }
+
+      for (int j = 0; j < 3; j++) {
+        System.out.println("  |");
+      }
+
+      start = route.getStart();
+      end = route.getEnd();
+      dateTime = dateTime.plusHours(start.getStayTime().getHours() + route.getMoveTime().getHours());
+      time = DateTimeFormatter.ofPattern("H:mm").format(dateTime);
+      System.out.println("  + " + time + " @ " + end);
     }
   }
 
   public void show(int point) {
-    for (int i = 0; i < this.route.size(); i++) {
-      String line = i == point ? " -> " : "    ";
-      Location location = this.route.get(i);
-      if (location != null) line += "+ 10:00 @ " + location;
-      else                  line += "|";
-      System.out.println(line);
+    Route route;
+    LocalDateTime dateTime = this.startTime;
+    String time;
+    Location start;
+    Location end;
+    int line = 0;
+    String arrow = "";
+    for (int i = 0; i < this.routes.size(); i++) {
+      route = this.routes.get(i);
+
+      if (i == 0) {
+        start = route.getStart();
+        time = DateTimeFormatter.ofPattern("H:mm").format(dateTime);
+        arrow = line == point ? " -> " : "    ";
+        System.out.println(arrow + "+ " + time + " @ " + start);
+        line++;
+      }
+
+      for (int j = 0; j < 3; j++) {
+        arrow = line == point ? " -> " : "    ";
+        System.out.println(arrow + "|");
+        line++;
+      }
+
+      start = route.getStart();
+      end = route.getEnd();
+      dateTime = dateTime.plusHours(start.getStayTime().getHours() + route.getMoveTime().getHours());
+      time = DateTimeFormatter.ofPattern("H:mm").format(dateTime);
+      arrow = line == point ? " -> " : "    ";
+      System.out.println(arrow + "+ " + time + " @ " + end);
+      line++;
     }
   }
 
@@ -68,6 +113,11 @@ public class Schedule {
     this.routes.add(0, newFirstRoute);
     this.routes.add(this.routes.size(), newLastRoute);
     this.route = mergeRoutes();
+  }
+
+  public void setStartTime() {
+     LocalDateTime now = LocalDateTime.now();
+     this.startTime = LocalDateTime.of(now.getYear(), now.getMonth(), now.getDayOfMonth(), 10, 0, 0);
   }
 
   private List<Location> mergeRoutes() {
