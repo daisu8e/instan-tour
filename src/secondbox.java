@@ -118,49 +118,49 @@ public class secondbox extends JFrame {
 		contentPane.add(label_8);
 		
 		JLabel star = new JLabel("");
-		Image img=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
+		Image img=new ImageIcon(this.getClass().getResource("Pic/Ster.png")).getImage();
 		star.setIcon(new ImageIcon(img));
 		star.setBounds(428, 73, 20, 20);
 		contentPane.add(star);
 		
 		JLabel Star2 = new JLabel("");
-		Image img2=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
+		Image img2=new ImageIcon(this.getClass().getResource("Pic/Ster.png")).getImage();
 		Star2.setIcon(new ImageIcon(img));
 		Star2.setBounds(454, 73, 20, 20);
 		contentPane.add(Star2);
 		
 		JLabel Star3 = new JLabel("");
-		Image img3=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
+		Image img3=new ImageIcon(this.getClass().getResource("Pic/Ster.png")).getImage();
 		Star3.setIcon(new ImageIcon(img));
 		Star3.setBounds(477, 73, 20, 20);
 		contentPane.add(Star3);
 		
 		JLabel Star4 = new JLabel("");
-		Image img4=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
+		Image img4=new ImageIcon(this.getClass().getResource("Pic/Ster.png")).getImage();
 		Star4.setIcon(new ImageIcon(img));
 		Star4.setBounds(500, 73, 20, 20);
 		contentPane.add(Star4);
 		
 		JLabel Star5 = new JLabel("");
-		Image img5=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
+		Image img5=new ImageIcon(this.getClass().getResource("Pic/Ster.png")).getImage();
 		Star5.setIcon(new ImageIcon(img));
 		Star5.setBounds(524, 73, 20, 20);
 		contentPane.add(Star5);
 		
 		JLabel Star6 = new JLabel("");
-		Image img6=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
+		Image img6=new ImageIcon(this.getClass().getResource("Pic/Ster.png")).getImage();
 		Star6.setIcon(new ImageIcon(img));
 		Star6.setBounds(454, 170, 20, 20);
 		contentPane.add(Star6);
 		
 		JLabel Star7 = new JLabel("");
-		Image img7=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
+		Image img7=new ImageIcon(this.getClass().getResource("Pic/Ster.png")).getImage();
 		Star7.setIcon(new ImageIcon(img));
 		Star7.setBounds(477, 170, 20, 20);
 		contentPane.add(Star7);
 		
 		JLabel Star8 = new JLabel("");
-		Image img8=new ImageIcon(this.getClass().getResource("/Ster.png")).getImage();
+		Image img8=new ImageIcon(this.getClass().getResource("Pic/Ster.png")).getImage();
 		Star8.setIcon(new ImageIcon(img));
 		Star8.setBounds(464, 270, 20, 20);
 		contentPane.add(Star8);
