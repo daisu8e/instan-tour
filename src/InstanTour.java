@@ -10,12 +10,12 @@ public class InstanTour {
     Tourist tourist = new Tourist();
 
     tourGuide.welcome();
-    input = tourist.inputTime();
+    String time = tourist.inputTime();
 
-    tourGuide.showTours();
-    input = tourist.selectTour();
+    tourGuide.showTours(time);
+    String tourNum = tourist.selectTour();
 
-    tourGuide.showTour();
+    tourGuide.showSchedule(tourNum);
     input = tourist.selectOption();
 
     tourGuide.start();

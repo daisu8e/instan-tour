@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class TourGuide {
 
   private static final Scanner SCANNER = new Scanner(System.in);
+  private Tour tour1;
+  private Tour tour2;
+  private Tour tour3;
+  private String time;
+  
 
   public void welcome() {
     for (int i = 0; i < 100; i++) System.out.println("");
@@ -22,53 +27,51 @@ public class TourGuide {
     System.out.println("");
   }
 
-  public void showTours() {
-    for (int i = 0; i < 100; i++) System.out.println("");
-    System.out.println("(1) ------------------------------------------------------------");
-    System.out.println("");
-    System.out.println("Granville Island > Yaletown");
-    System.out.println("");
-    System.out.println("* * * * *  183 tourist reviews");
-    System.out.println("");
-    System.out.println("(2) ------------------------------------------------------------");
-    System.out.println("");
-    System.out.println("Granville Island > Yaletown");
-    System.out.println("");
-    System.out.println("* * *      73 tourist reviews");
-    System.out.println("");
-    System.out.println("(3) ------------------------------------------------------------");
-    System.out.println("");
-    System.out.println("Granville Island > Yaletown");
-    System.out.println("");
-    System.out.println("*          8 tourist reviews");
-    System.out.println("");
-    System.out.println("(0) ------------------------------------------------------------");
-    System.out.println("");
-    System.out.println("Back");
-    System.out.println("");
-    System.out.println("----------------------------------------------------------------");
-    System.out.println("");
-    System.out.println("Select a number that you are interested in.");
-    System.out.println("");
+  public void showTours(String time) {
+	  this.time = time;
+	  System.out.println();
+	  System.out.println("OK. Now, we are arranging...");
+	  SCANNER.nextLine();
+	  
+	  if (time.equals("1 day")) {
+		  tour1 = new Tour ("Granville Island", "Gastown", "1");
+		  tour2 = new Tour ("Granville Island", "Stanley Park", "2");
+		  tour3 = new Tour ("Gastown", "Stanley Park", "3");
+	  }
+	  
+	  if (time.equals("2 days")) {
+		  tour1 = new Tour ("Granville Island", "Capilano Suspension Bridge", "1");		  
+		  tour2 = new Tour ("Gastown", "Capilano Suspension Bridge", "2");
+		  tour3 = new Tour ("Stanley Park", "Whistler", "3");
+	  }
+	  
+	  if (time.equals("3 days")) {
+		  tour1 = new Tour ("Granville Island", "Whistler", "1");		  
+		  tour2 = new Tour ("Gastown", "Whistler", "2");		  
+		  tour3 = new Tour ("Stanley Park", "Whistler", "3");
+	  }
+	  
+	  System.out.println("(0) ---------------------------------------------------------------\n");
+	  System.out.println("Back \n");
+	  System.out.println("-------------------------------------------------------------------\n");
+	  System.out.println("Select a number that you are interested in.\n");
+	  
   }
 
-  public void showTour() {
+  public void showSchedule(String tourNum) {
     for (int i = 0; i < 100; i++) System.out.println("");
-    System.out.println("Schedule for Granville Island > Yaletown");
-    System.out.println("");
-    System.out.println("  + 10:00 @ Current location");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  + 10:30 @ Granville Island");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  + 14:00 @ Yaletown");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  + 18:00 @ Current location");
+
+    if (tourNum.equals("1")){
+    	tour1.showTimeBasedSchedule(time);
+    }
+    
+    if (tourNum.equals("2")) {
+    	tour2.showTimeBasedSchedule(time);
+    }
+    
+    if (tourNum.equals("3")) {
+    	tour3.showTimeBasedSchedule(time);
+    }
     System.out.println("");
     System.out.println("(1) Start this tour!");
     System.out.println("(2) Check reviews");
