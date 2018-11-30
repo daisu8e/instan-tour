@@ -21,6 +21,10 @@ public abstract class Location {
     this.time = time;
   }
 
+  public String toString() {
+    return this.name;
+  }
+
   public String getName() {
     return this.name;
   }

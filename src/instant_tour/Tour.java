@@ -44,19 +44,19 @@ public class Tour {
   }
 
   public void showSchedule() {
-    System.out.println("  + 10:00 @ Current location");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  + 10:30 @ Granville Island");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  + 14:00 @ Yaletown");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  |");
-    System.out.println("  + 18:00 @ Current location");
+    this.schedule.show();
+  }
+
+  public void showSchedule(int point) {
+    this.schedule.show(point);
+  }
+
+  public void setHome(Home home) {
+    this.schedule.addHome(home);
+  }
+
+  public List<Location> getRoute() {
+    return this.schedule.getRoute();
   }
 
   public static Map<Integer, Tour> find() {

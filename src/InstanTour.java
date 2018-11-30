@@ -7,9 +7,8 @@ public class InstanTour {
     TourGuide tourGuide = new TourGuide();
     Tourist tourist = new Tourist();
 
-    int option;
-
     while (true) {
+      int option;
 
       if (!tourist.hasTime()) {
         tourGuide.welcome();
@@ -35,46 +34,27 @@ public class InstanTour {
       if (option == 0) {
         tourist.clearTour();
         continue;
+      } else if (option == 1) {
+        break;
       }
-
-      tourGuide.start();
-
-      tourist.checkLocation(0);
-      tourist.checkLocation(1);
-      tourist.checkLocation(2);
-      tourist.checkLocation(3);
-      tourist.checkLocation(4);
-
-      tourGuide.guide(0);
-
-      tourist.checkLocation(5);
-      tourist.checkLocation(6);
-      tourist.checkLocation(7);
-      tourist.checkLocation(8);
-
-      tourGuide.guide(1);
-
-      tourist.checkLocation(9);
-      tourist.checkLocation(10);
-      tourist.checkLocation(11);
-      tourist.checkLocation(12);
-
-      tourGuide.guide(2);
-
-      tourist.checkLocation(13);
-      tourist.checkLocation(14);
-      tourist.checkLocation(15);
-      tourist.checkLocation(16);
-
-      tourGuide.finish();
-
-      tourGuide.askReview();
-      tourist.review();
-
-      tourGuide.askRating();
-      tourist.rate();
-
-      tourGuide.thankYou();
     }
+
+    tourGuide.start();
+
+    while (true) {
+      tourist.checkLocation();
+      if (tourist.arrivedAtLocation()) tourGuide.guide(tourist.getLocation());
+      else if (tourist.arrivedHome()) break;
+    }
+
+    tourGuide.finish();
+
+    tourGuide.askReview();
+    tourist.review();
+
+    tourGuide.askRating();
+    tourist.rate();
+
+    tourGuide.thankYou();
   }
 }

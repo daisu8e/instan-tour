@@ -19,6 +19,12 @@ public class Route {
     this.end = end;
   }
 
+  public Route(Location start, Time time, Location end) {
+    this.start = start;
+    this.time = time;
+    this.end = end;
+  }
+
   public Location getStart() {
     return this.start;
   }

@@ -28,6 +28,7 @@ public class TourGuide {
 
   public void arrangeTours(Tourist tourist) {
     Map<Integer, Tour> tours = Tour.find();
+    tours.entrySet().stream().forEach(it -> it.getValue().setHome(tourist.getHome()));
     this.tours = new ArrayList<>();
     this.tours.add(tours.get(1));
     this.tours.add(tours.get(2));
@@ -74,37 +75,13 @@ public class TourGuide {
     SCANNER.nextLine();
   }
 
-  public void guide(int location) {
-
-    if (location == 0) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("OK. We will guide you around Granville Island.");
-      System.out.println("Granville Island is ...");
-      System.out.println("...");
-      System.out.println("...");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (location == 1) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("OK. We will guide you around The Sandbar Seafood Restaurant.");
-      System.out.println("The Sandbar Seafood Restaurant is ...");
-      System.out.println("...");
-      System.out.println("...");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (location == 2) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("OK. We will guide you around Yaletown.");
-      System.out.println("Yaletown is ...");
-      System.out.println("...");
-      System.out.println("...");
-      SCANNER.nextLine();
-      return;
-    }
+  public void guide(Location location) {
+    for (int i = 0; i < 100; i++) System.out.println("");
+    System.out.println("OK. We will guide you around Granville Island.");
+    System.out.println("Granville Island is ...");
+    System.out.println("...");
+    System.out.println("...");
+    SCANNER.nextLine();
   }
 
   public void finish() {
@@ -127,7 +104,6 @@ public class TourGuide {
   public void thankYou() {
     System.out.println("");
     System.out.println("Thank you for using InstanTour and we hope you will use it again.");
-    System.exit(0);
   }
 
 }

@@ -8,12 +8,18 @@ public class Tourist {
 
   private Gps gps;
   private Home home;
+  private Location location;
   private Time time;
   private Tour tour;
+  private boolean started = false;
 
   public Tourist() {
     this.gps = new Gps();
-    this.home = new Home(this.gps.getLocationName());
+    this.home = new Home(this.gps.getName("CICCC"));
+  }
+
+  public Home getHome() {
+    return this.home;
   }
 
   public void inputTime() {
@@ -44,6 +50,7 @@ public class Tourist {
 
   public void setTour(Tour tour) {
     this.tour = tour;
+    this.gps.setRoute(this.tour.getRoute());
   }
 
   public boolean hasTour() {
@@ -61,398 +68,30 @@ public class Tourist {
     this.tour.showSchedule();
   }
 
-  public void checkLocation(int step) {
+  public void checkLocation() {
+    this.gps.nextPoint();
+    if (!this.started) this.started = true;
+    else this.location = this.gps.getLocation();
 
-    if (step == 0) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println(" -> + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
+    for (int i = 0; i < 100; i++) System.out.println("");
+    this.tour.showSchedule(this.gps.getPoint());
+    SCANNER.nextLine();
+  }
 
-    if (step == 1) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println(" -> |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
+  public boolean arrivedAtLocation() {
+    if (this.location == null) return false;
+    if (this.location instanceof Home) return false;
+    if (this.location == this.gps.getLocation()) return true;
+    return false;
+  }
 
-    if (step == 2) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println(" -> |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
+  public boolean arrivedHome() {
+    if (this.location instanceof Home) return true;
+    return false;
+  }
 
-    if (step == 3) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println(" -> |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 4) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println(" -> + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 5) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println(" -> |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 6) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println(" -> |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 7) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println(" -> |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 8) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println(" -> + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 9) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println(" -> |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 10) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println(" -> |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 11) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println(" -> |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 12) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println(" -> + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 13) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println(" -> |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 14) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println(" -> |");
-      System.out.println("    |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 15) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println(" -> |");
-      System.out.println("    + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
-
-    if (step == 16) {
-      for (int i = 0; i < 100; i++) System.out.println("");
-      System.out.println("    + 10:00 @ Current location");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 10:30 @ Granville Island");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 12:45 @ The Sandbar Seafood Restaurant");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    + 14:00 @ Yaletown");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println("    |");
-      System.out.println(" -> + 18:00 @ Current location");
-      SCANNER.nextLine();
-      return;
-    }
+  public Location getLocation() {
+    return this.location;
   }
 
   public String review() {
@@ -464,4 +103,5 @@ public class Tourist {
     System.out.print("> You : ");
     return SCANNER.nextLine();
   }
+
 }
