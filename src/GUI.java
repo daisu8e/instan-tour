@@ -105,13 +105,13 @@ public class GUI {
 		frame.getContentPane().add(btnDay_1);
 		
 		JLabel lblI = new JLabel("");
-		Image img=new ImageIcon(this.getClass().getResource("/Main_logo.png")).getImage();
+		Image img=new ImageIcon(this.getClass().getResource("Pic/Main_logo.png")).getImage();
 		lblI.setIcon(new ImageIcon(img));
 		lblI.setBounds(398, 74, 256, 256);
 		frame.getContentPane().add(lblI);
 		
 		JLabel label_1 = new JLabel("");
-		Image img2=new ImageIcon(this.getClass().getResource("/Aria.png")).getImage();
+		Image img2=new ImageIcon(this.getClass().getResource("Pic/Aria.png")).getImage();
 		label_1.setIcon(new ImageIcon(img2));
 		label_1.setBounds(224, 6, 223, 56);
 		frame.getContentPane().add(label_1);
