@@ -22,7 +22,7 @@ public class TourGuide {
 
   public void askTime() {
     System.out.println("");
-    System.out.println("How long days would you like to tour?");
+    System.out.println("How many days would you like to tour?");
     System.out.println("");
   }
 
@@ -43,9 +43,9 @@ public class TourGuide {
     for (Tour tour : this.tours) {
       System.out.println("(" + (this.tours.indexOf(tour) + 1) +") ------------------------------------------------------------");
       System.out.println("");
-      System.out.println(tour.toString());
+      System.out.println(tour);
       System.out.println("");
-      System.out.println(tour.getReview());
+      System.out.println(tour.getReviewLabel());
       System.out.println("");
     }
     System.out.println("(0) ------------------------------------------------------------");

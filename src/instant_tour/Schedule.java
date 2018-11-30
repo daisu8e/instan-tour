@@ -18,10 +18,16 @@ public class Schedule {
   }
 
   public String toString() {
-    return "Granville Island > Yaletown";
-//    for (Route route : this.routes) {
-//
-//    }
+    List<String> names = new ArrayList<>();
+    for (Route route : this.routes) {
+      Location[] locations = {route.getStart(), route.getEnd()};
+      for (Location location : locations) {
+        if (!(location instanceof Sight)) continue;
+        if (names.contains(location.getName())) continue;
+        names.add(location.getName());
+      }
+    }
+    return String.join(" > ", names);
   }
 
   public List<Route> getRoutes() {
