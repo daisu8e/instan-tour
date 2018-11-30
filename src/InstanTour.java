@@ -4,56 +4,56 @@ import instant_tour.Tourist;
 public class InstanTour {
   public static void main(String[] args) {
 
-    String input;
-
     TourGuide tourGuide = new TourGuide();
     Tourist tourist = new Tourist();
 
-    tourGuide.welcome();
-    input = tourist.inputTime();
+    while (true) {
+      int option;
 
-    tourGuide.showTours();
-    input = tourist.selectTour();
+      if (!tourist.hasTime()) {
+        tourGuide.welcome();
+        tourGuide.askTime();
+        tourist.inputTime();
+        tourGuide.arrangeTours(tourist);
+      }
 
-    tourGuide.showTour();
-    input = tourist.selectOption();
+      if (!tourist.hasTour()) {
+        tourGuide.askTour();
+        option = tourist.inputOption();
+        if (option == 0) {
+          tourist.clearTime();
+          continue;
+        } else {
+          tourist.setTour(tourGuide.getTours().get(option - 1));
+        }
+      }
+
+      tourist.checkTour();
+      tourGuide.askStart();
+      option = tourist.inputOption();
+      if (option == 0) {
+        tourist.clearTour();
+        continue;
+      } else if (option == 1) {
+        break;
+      }
+    }
 
     tourGuide.start();
 
-    tourist.showLocation(0);
-    tourist.showLocation(1);
-    tourist.showLocation(2);
-    tourist.showLocation(3);
-    tourist.showLocation(4);
-
-    tourGuide.guide(0);
-
-    tourist.showLocation(5);
-    tourist.showLocation(6);
-    tourist.showLocation(7);
-    tourist.showLocation(8);
-
-    tourGuide.guide(1);
-
-    tourist.showLocation(9);
-    tourist.showLocation(10);
-    tourist.showLocation(11);
-    tourist.showLocation(12);
-
-    tourGuide.guide(2);
-
-    tourist.showLocation(13);
-    tourist.showLocation(14);
-    tourist.showLocation(15);
-    tourist.showLocation(16);
+    while (true) {
+      tourist.checkLocation();
+      if (tourist.arrivedAtLocation()) tourGuide.guide(tourist.getLocation());
+      else if (tourist.arrivedHome()) break;
+    }
 
     tourGuide.finish();
 
     tourGuide.askReview();
-    input = tourist.review();
+    tourist.review();
 
     tourGuide.askRating();
-    input = tourist.rate();
+    tourist.rate();
 
     tourGuide.thankYou();
   }
